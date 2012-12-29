@@ -1,0 +1,173 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>openpiv.lib.sincinterp &mdash; OpenPIV 1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OpenPIV 1 documentation" href="../../index.html" />
+    <link rel="up" title="API reference" href="../api_reference.html" />
+    <link rel="next" title="openpiv.lib.replace_nans" href="openpiv.lib.replace_nans.html" />
+    <link rel="prev" title="openpiv.process.normalize_intensity" href="openpiv.process.normalize_intensity.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../../np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="openpiv.lib.replace_nans.html" title="openpiv.lib.replace_nans"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="openpiv.process.normalize_intensity.html" title="openpiv.process.normalize_intensity"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">OpenPIV 1 documentation</a> &raquo;</li>
+          <li><a href="../api_reference.html" accesskey="U">API reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="openpiv-lib-sincinterp">
+<h1>openpiv.lib.sincinterp<a class="headerlink" href="#openpiv-lib-sincinterp" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="openpiv.lib.sincinterp">
+<tt class="descclassname">openpiv.lib.</tt><tt class="descname">sincinterp</tt><big>(</big><big>)</big><a class="headerlink" href="#openpiv.lib.sincinterp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Re-sample an image at intermediate positions between pixels.</p>
+<p>This function uses a cardinal interpolation formula which limits 
+the loss of information in the resampling process. It uses a limited
+number of neighbouring pixels.</p>
+<p>The new image <img class="math" src="../../_images/math/69e5f345a57d15976e173a373f5fd1490b4c2b43.png" alt="im^+"/> at fractional locations <img class="math" src="../../_images/math/26eeb5258ca5099acf8fe96b2a1049c48c89a5e6.png" alt="x"/> and <img class="math" src="../../_images/math/092e364e1d9d19ad5fffb0b46ef4cc7f2da02c1c.png" alt="y"/> is computed as:</p>
+<div class="math">
+<p><img src="../../_images/math/00d2792a1445ac6d1103ffb9f28181123af518db.png" alt="im^+(x,y) = \sum_{i=-\mathtt{kernel\_size}}^{i=\mathtt{kernel\_size}} \sum_{j=-\mathtt{kernel\_size}}^{j=\mathtt{kernel\_size}} \mathtt{image}(i,j)  sin[\pi(i-\mathtt{x})]  sin[\pi(j-\mathtt{y})]  / \pi(i-\mathtt{x}) / \pi(j-\mathtt{y})"/></p>
+</div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><p class="first"><strong>image</strong> : np.ndarray, dtype np.int32</p>
+<blockquote>
+<div><p>the image array.</p>
+</div></blockquote>
+<p><strong>x</strong> : two dimensions np.ndarray of floats</p>
+<blockquote>
+<div><p>an array containing fractional pixel row
+positions at which to interpolate the image</p>
+</div></blockquote>
+<p><strong>y</strong> : two dimensions np.ndarray of floats</p>
+<blockquote>
+<div><p>an array containing fractional pixel column 
+positions at which to interpolate the image</p>
+</div></blockquote>
+<p><strong>kernel_size</strong> : int</p>
+<blockquote>
+<div><p>interpolation is performed over a <tt class="docutils literal"><span class="pre">(2*kernel_size+1)*(2*kernel_size+1)</span></tt> 
+submatrix  in the neighbourhood of each interpolation point.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"><p class="first"><strong>im</strong> : np.ndarray, dtype np.float64</p>
+<blockquote class="last">
+<div><p>the interpolated value of <tt class="docutils literal"><span class="pre">image</span></tt> at the points specified 
+by <tt class="docutils literal"><span class="pre">x</span></tt> and <tt class="docutils literal"><span class="pre">y</span></tt></p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="openpiv.process.normalize_intensity.html"
+                        title="previous chapter">openpiv.process.normalize_intensity</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="openpiv.lib.replace_nans.html"
+                        title="next chapter">openpiv.lib.replace_nans</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/src/generated/openpiv.lib.sincinterp.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../../np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="openpiv.lib.replace_nans.html" title="openpiv.lib.replace_nans"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="openpiv.process.normalize_intensity.html" title="openpiv.process.normalize_intensity"
+             >previous</a> |</li>
+        <li><a href="../../index.html">OpenPIV 1 documentation</a> &raquo;</li>
+          <li><a href="../api_reference.html" >API reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, The OpenPIV Contributors.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
+    </div>
+  </body>
+</html>

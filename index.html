@@ -1,0 +1,193 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>OpenPiv: a python package for PIV image analysis. &mdash; OpenPIV 1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="OpenPIV 1 documentation" href="#" />
+    <link rel="next" title="&lt;no title&gt;" href="includeme.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="includeme.html" title="&lt;no title&gt;"
+             accesskey="N">next</a> |</li>
+        <li><a href="#">OpenPIV 1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="openpiv-a-python-package-for-piv-image-analysis">
+<h1>OpenPiv: a python package for PIV image analysis.<a class="headerlink" href="#openpiv-a-python-package-for-piv-image-analysis" title="Permalink to this headline">¶</a></h1>
+<p>OpenPiv is a effort of scientists to deliver a tool for the analysis of PIV images
+using state-of-the-art algorithms. Openpiv is released under the
+<a class="reference external" href="http://en.wikipedia.org/wiki/GNU_General_Public_License">GPL Licence</a>,
+which means that the source code is freely available for users to study, copy, modify
+and improve. Because of its permissive licence, you are welcome to download and try
+OpenPiv for whatever need you may have. Furthermore, you are encouraged to contribute
+to OpenPiv, with code, suggestions and critics.</p>
+<p>OpenPiv exists in three forms: Matlab, C++ and Python. This is the home page of the Python implementation.</p>
+<div class="section" id="contents">
+<h2>Contents:<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="src/downloads_page.html">Download OpenPIV Example</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="src/installation_instruction.html">Installation instruction</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="src/developers.html">Information for developers and contributors</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="src/tutorial.html">Tutorial</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="src/api_reference.html">API reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="src/generated/openpiv.tools.imread.html">openpiv.tools.imread</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/generated/openpiv.tools.save.html">openpiv.tools.save</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/generated/openpiv.tools.display.html">openpiv.tools.display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/generated/openpiv.tools.display_vector_field.html">openpiv.tools.display_vector_field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/generated/openpiv.tools.Multiprocesser.html">openpiv.tools.Multiprocesser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/generated/openpiv.pyprocess.normalize_intensity.html">openpiv.pyprocess.normalize_intensity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/generated/openpiv.pyprocess.correlate_windows.html">openpiv.pyprocess.correlate_windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/generated/openpiv.pyprocess.get_coordinates.html">openpiv.pyprocess.get_coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/generated/openpiv.pyprocess.get_field_shape.html">openpiv.pyprocess.get_field_shape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/generated/openpiv.pyprocess.moving_window_array.html">openpiv.pyprocess.moving_window_array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/generated/openpiv.pyprocess.find_first_peak.html">openpiv.pyprocess.find_first_peak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/generated/openpiv.pyprocess.find_second_peak.html">openpiv.pyprocess.find_second_peak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/generated/openpiv.pyprocess.find_subpixel_peak_position.html">openpiv.pyprocess.find_subpixel_peak_position</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/generated/openpiv.pyprocess.piv.html">openpiv.pyprocess.piv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/generated/openpiv.process.extended_search_area_piv.html">openpiv.process.extended_search_area_piv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/generated/openpiv.process.CorrelationFunction.html">openpiv.process.CorrelationFunction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/generated/openpiv.process.get_coordinates.html">openpiv.process.get_coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/generated/openpiv.process.get_field_shape.html">openpiv.process.get_field_shape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/generated/openpiv.process.correlate_windows.html">openpiv.process.correlate_windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/generated/openpiv.process.normalize_intensity.html">openpiv.process.normalize_intensity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/generated/openpiv.lib.sincinterp.html">openpiv.lib.sincinterp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/generated/openpiv.lib.replace_nans.html">openpiv.lib.replace_nans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/generated/openpiv.filters.gaussian.html">openpiv.filters.gaussian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/generated/openpiv.filters._gaussian_kernel.html">openpiv.filters._gaussian_kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/generated/openpiv.filters.replace_outliers.html">openpiv.filters.replace_outliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/generated/openpiv.validation.global_val.html">openpiv.validation.global_val</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/generated/openpiv.validation.sig2noise_val.html">openpiv.validation.sig2noise_val</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/generated/openpiv.validation.global_std.html">openpiv.validation.global_std</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/generated/openpiv.validation.local_median_val.html">openpiv.validation.local_median_val</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/generated/openpiv.scaling.uniform.html">openpiv.scaling.uniform</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><em>Index</em></a></li>
+<li><a class="reference internal" href="py-modindex.html"><em>Module Index</em></a></li>
+<li><a class="reference internal" href="search.html"><em>Search Page</em></a></li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">OpenPiv: a python package for PIV image analysis.</a><ul>
+<li><a class="reference internal" href="#contents">Contents:</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+  <h4>Next topic</h4>
+  <p class="topless"><a href="includeme.html"
+                        title="next chapter">&lt;no title&gt;</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="np-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="includeme.html" title="&lt;no title&gt;"
+             >next</a> |</li>
+        <li><a href="#">OpenPIV 1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, The OpenPIV Contributors.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
+    </div>
+  </body>
+</html>
